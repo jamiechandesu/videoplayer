@@ -60,18 +60,6 @@ body {
   height: 24px;
 }
 
-.controls .fa-play {
-  color: #28a745;
-}
-
-.controls .fa-stop {
-  color: #dc3545;
-}
-
-.controls .fa-pause {
-  color: #333;
-}
-
 .controls .timestamp {
   color: #333;
   font-weight: bold;
@@ -87,4 +75,30 @@ body {
   .controls {
     width: 90%;
   }
+}
+
+/* Flashlight Overlay */
+:root {
+  cursor: none;
+  --cursorX: 50vw;
+  --cursorY: 50vh;
+}
+:root:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  pointer-events: none;
+  background: radial-gradient(
+    circle 30vmax at var(--cursorX) var(--cursorY),
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.5) 80%,
+    rgba(0, 0, 0, 0.95) 100%
+  );
+  z-index: 2;
+}
+
+video {
+  z-index: 1;
 }
